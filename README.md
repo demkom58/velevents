@@ -1,10 +1,10 @@
 # VelEvents
 
-This repository contains adjusted source code of Velocity Events, a plugin for the Velocity proxy server. 
+This repository contains adjusted source code of Velocity Events to be reused in other projects. 
 The original source code can be found [here](https://github.com/PaperMC/Velocity).
 
 ## Changes
-The original source code has been adjusted to allow for the following features:
+Made adjustments includes:
 - removed Guava dependency;
 - Checker Framework annotations replaced with jspecify;
 - plugin type made generic;
