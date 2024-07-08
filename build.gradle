@@ -1,0 +1,45 @@
+group = 'io.invokegs'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+allprojects {
+    group = 'io.invokegs.velevents'
+    version = '1.0-SNAPSHOT'
+}
+
+subprojects {
+    apply plugin: 'java-library'
+    apply plugin: 'maven-publish'
+
+    java.sourceCompatibility = 21
+    java.targetCompatibility = 21
+    compileJava.options.encoding = 'UTF-8'
+
+    java {
+        withJavadocJar()
+        withSourcesJar()
+    }
+
+    dependencies {
+        testImplementation platform('org.junit:junit-bom:5.10.0')
+        testImplementation 'org.junit.jupiter:junit-jupiter'
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+
+    publishing {
+        publications {
+            maven(MavenPublication) {
+                groupId project.group
+                artifactId project.name
+                version project.version
+                from components.java
+            }
+        }
+    }
+}

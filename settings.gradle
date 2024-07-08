@@ -1,0 +1,27 @@
+pluginManagement {
+    repositories {
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
+dependencyResolutionManagement {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven {
+            name "Sonatype"
+            url "https://oss.sonatype.org/content/repositories/snapshots/"
+        }
+        maven {
+            name "Jitpack"
+            url "https://jitpack.io/"
+        }
+    }
+}
+
+rootProject.name = 'velevents'
+
+include 'api'
+include 'impl'
+
